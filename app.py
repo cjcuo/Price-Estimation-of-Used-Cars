@@ -23,12 +23,8 @@ def predict():
 
     x_cols = ['Mileage','Kilometers_Driven','Engine','Power','Fuel_Type',
               'Owner_Type','Transmission','Seats','Year']
-    res = {}
-    for key in x_cols:
-        for value in inp_features:
-            res[key] = value
-            inp_features.remove(value)
-            break 
+    
+    res = {x_cols[i]: inp_features[i] for i in range(len(test_keys))}
 
     inputdata = pd.DataFrame(inp_features, columns = x_cols)
 
