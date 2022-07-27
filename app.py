@@ -27,7 +27,7 @@ def predict():
     for key in x_cols:
         for value in inp_features:
             res[key] = value
-            test_values.remove(value)
+            inp_features.remove(value)
             break 
 
     inputdata = pd.DataFrame(inp_features, columns = x_cols)
